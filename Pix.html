@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagamento via PIX</title>
+  <style> 
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #c7c7c77e;
+    }
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .pix-logo {
+      display: block;
+      margin: 0 auto;
+      width: 100px;
+    }
+    .form-container {
+      margin-top: 20px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      color: #555;
+    }
+    .form-group input[type="text"],
+    .form-group select {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .form-group input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #009688;
+      color: #fff;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .form-group input[type="submit"]:hover {
+      background-color: #00796b;
+    }
+    #qr-code {
+      display: block;
+      margin: 20px auto;
+      max-width: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Pagamento via PIX</h1>
+    <img src="img/pixinho.png" alt="Símbolo do PIX" class="pix-logo">
+    <div class="form-container">
+      <form id="paymentForm" action="confirmacao.html" method="get">
+        <div class="form-group">
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" name="nome" placeholder="Digite o nome">
+        </div>
+        <div class="form-group">
+          <label for="idade">Idade:</label>
+          <input type="text" id="idade" name="idade" placeholder="Digite a idade">
+        </div>
+        <div class="form-group">
+          <label for="sexo">Sexo:</label>
+          <select id="sexo" name="sexo">
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="endereco">Endereço:</label>
+          <input type="text" id="endereco" name="endereco" placeholder="Digite o endereço">
+        </div>
+        <div class="form-group">
+          <label for="banco">Banco:</label>
+          <input type="text" id="banco" name="banco" placeholder="Digite o banco">
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Pagar via PIX">
+        </div>
+      </form>
+    </div>
+    
+  </div>
+
+  <script>
+    // Enviar dados para a página de confirmação
+    document.getElementById('paymentForm').addEventListener('submit', function(event) {
+      // Obter os valores inseridos nos campos
+      var nome = document.getElementById("nome").value;
+      var idade = document.getElementById("idade").value;
+      var sexo = document.getElementById("sexo").value;
+      var endereco = document.getElementById("endereco").value;
+      var banco = document.getElementById("banco").value;
+      
+      // Adicionar os valores como parâmetros na URL da página de confirmação
+      var urlConfirmacao = "confirmacao.html?nome=" + encodeURIComponent(nome) + "&idade=" + encodeURIComponent(idade) + "&sexo=" + encodeURIComponent(sexo) + "&endereco=" + encodeURIComponent(endereco) + "&banco=" + encodeURIComponent(banco);
+      
+      // Redirecionar para a página de confirmação com os parâmetros
+      window.location.href = urlConfirmacao;
+      
+      // Impedir o envio padrão do formulário
+      event.preventDefault();
+    });
+  </script>
+</body>
+</html>

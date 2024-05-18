@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaquinha Online</title>
+    <style>
+        body {
+            font-family: cursive;
+            font-size: 28px;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(12, 12, 12); /* Cor de fundo branco */
+            color: rgb(255, 255, 255); /* Cor do texto preto */
+        }
+        header, footer {
+            background-color: #232d38; /* Cinza */
+            color: #fff; /* Texto branco */
+            text-align: center;
+            padding: 0.5%; /* Reduzindo o padding vertical */
+
+        }
+        .container {
+            text-align: justify;
+            text-justify: inter-word;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-size: 24px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .campaign {
+            border: 1px solid rgb(15, 15, 15);
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #1b1a1a; /* Cor de fundo cinza claro */
+        }
+        .campaign img {
+            max-width: 100%;
+            margin-left: 14%;
+        }
+        .progress {
+            background-color: #e0e0e0; /* Cor de fundo cinza */
+            border-radius: 5px;
+            height: 20px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+        .progress-bar {
+            background-color: #30ec9e; 
+            height: 100%;
+            transition: width 0.5s ease-in-out;
+            width: 26%; /* Mudança na largura da barra para 26% */
+        }
+        .button {
+            background-color: #1e88e5; /* Azul */
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #1565c0; /* Azul mais escuro ao passar o mouse */
+        }
+        .float-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999;
+        }
+        .form-group input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #72f8b9;
+      color: rgb(0, 0, 0);
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Vaquinha Online</h1>
+</header>
+
+<div class="container">
+    <h2 align="center">Ajude a Realizar Sonhos!</h2>
+    <p>Vera Cruz SP está mais do que nunca de sua ajuda para ajudar famílias carentes que passam por necessidades em seu dia a dia, por isso essa vaquinha online foi criada! Agora é sua chance de poder ajudar essas pessoas que não podem desfrutar da felicidade da vida por conta da pobreza extrema a qual estão sendo expostas, conto com sua ajuda para transformarmos vidas que esperam por uma alma bondosa que estaja desposta a os reconhecerem como humanos com direito a uma vida digna. </p>
+    
+    <div class="campaign">
+        <img align="center" src="img/veracruz.png">
+        <h3 align="center">Vera Cruz SP Help</h3>
+        <p>Esta campanha foi criada para ajudar as famílias carentes que habitam em nossa cidade, com qualquer valor contribuído podemos mudar a vida dessas pessoas.</p>
+        <div class="progress">
+            <div class="progress-bar" style="width: 26%;"></div>
+        </div>
+        <p>26,5% arrecadadoㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤR$1.500,00</p>
+        <div class="form-group">
+            <input type="submit" value="Contribuir" id="confirmButton">
+            <a href="Pix.html"></a>
+          </div>
+    </div>
+    
+    <!-- Outras campanhas podem ser adicionadas aqui -->
+
+</div>
+
+<footer>
+    <p>Contato: (14) 98856-7234 </p>
+</footer>
+
+<!-- Botão no canto inferior direito -->
+<div class="float-button">
+    <button class="button"></button>
+</div>
+
+</body>
+<script>
+     document.getElementById('confirmButton').addEventListener('click', function() {
+      window.location.href = 'Pix.html';
+    });
+</script>
+</html>
